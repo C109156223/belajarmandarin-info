@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>App Store 上架文案 — BelajarMandarin</title>
+<style>
+  :root {
+    --ink: #24312f;
+    --sub: #5b6b68;
+    --line: #dfe6e4;
+    --accent: #2C9691;
+    --bg: #fbfaf7;
+    --card: #ffffff;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e8efed;
+      --sub: #9db0ac;
+      --line: #2b3735;
+      --accent: #5fc2bc;
+      --bg: #141c1b;
+      --card: #1b2523;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #e8efed;
+    --sub: #9db0ac;
+    --line: #2b3735;
+    --accent: #5fc2bc;
+    --bg: #141c1b;
+    --card: #1b2523;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, "Segoe UI", "PingFang TC", "Noto Sans TC", system-ui, sans-serif;
+    line-height: 1.75;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 24px 80px;
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-size: 28px;
+    line-height: 1.35;
+    margin: 8px 0 4px;
+  }
+  .meta {
+    color: var(--sub);
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 19px;
+    margin: 40px 0 12px;
+    padding-top: 4px;
+    border-top: 1px solid var(--line);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  p, li { font-size: 16px; max-width: 66ch; }
+  ul { padding-left: 1.2em; }
+  li + li { margin-top: 8px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 18px 0;
+  }
+  .card p { margin: 0; }
+  .label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--sub);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px;
+  }
+  .charcount {
+    font-size: 13px;
+    color: var(--sub);
+    margin-top: 6px;
+  }
+  pre.copyblock {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 12px 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: -apple-system, "PingFang TC", "Noto Sans TC", system-ui, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+  code.kw {
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+    border-radius: 4px;
+    padding: 2px 6px;
+    font-size: 14px;
+  }
+  .divider { border: none; border-top: 1px solid var(--line); margin: 56px 0; }
+  footer { color: var(--sub); font-size: 13px; }
+  ul.theme-list { columns: 2; column-gap: 32px; }
+  ul.theme-list li { break-inside: avoid; }
+  @media (max-width: 480px) {
+    ul.theme-list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">App Store 上架文案</div>
+  <h1>BelajarMandarin</h1>
+  <p class="meta">給印尼語使用者的繁體中文學習 App · 上架素材整理</p>
+
+  <div class="card">
+    <p>
+      這份文件整理了送審 App Store Connect 時需要填寫的三個欄位：副標題、關鍵字、完整描述。
+      直接複製貼上到對應欄位即可。
+    </p>
+  </div>
+
+  <h2>副標題 Subtitle</h2>
+  <p class="label">App Store Connect → App Information → Subtitle（限 30 字元）</p>
+  <pre class="copyblock">Belajar Mandarin Trilingual</pre>
+  <p class="charcount">目前 27 字元</p>
+
+  <h2>關鍵字 Keywords</h2>
+  <p class="label">App Store Connect → App Information → Keywords（限 100 字元，逗號分隔）</p>
+  <pre class="copyblock">mandarin,belajar mandarin,bahasa mandarin,hsk,zhuyin,hanzi,chinese,kosakata,kursus</pre>
+  <p class="charcount">目前 82 字元，還有空間可以加詞，例如 <code class="kw">,anak</code> 或 <code class="kw">,pemula</code></p>
+
+  <h2>完整描述 Description（Bahasa Indonesia）</h2>
+  <p class="label">App Store Connect → App Information → Description</p>
+  <pre class="copyblock">BelajarMandarin adalah aplikasi belajar Bahasa Mandarin (Tradisional) yang dirancang khusus untuk penutur Bahasa Indonesia — trilingual: Mandarin Tradisional, Inggris, dan Indonesia dalam satu aplikasi.
+
+✨ 12 TEMA PELAJARAN LENGKAP
+Belajar dari dasar hingga situasi sehari-hari:
+• Salam & Perkenalan
+• Angka & Waktu
+• Keluarga
+• Makanan & Minuman
+• Belanja & Warna
+• Transportasi & Bertanya Arah
+• Kehidupan Sekolah
+• Hobi & Cuaca
+• Bandara & Naik Pesawat
+• Ke Dokter
+• Memesan di Restoran
+• Dunia Kerja
+
+📚 FITUR BELAJAR
+• Kosakata lengkap dengan Hanzi, Zhuyin (注音), dan terjemahan Bahasa Indonesia
+• Kuis interaktif untuk menguji pemahaman setiap tema
+• Latihan urutan goresan (stroke order) untuk belajar menulis karakter Han dengan benar
+• Panduan Zhuyin untuk membantu pelafalan yang tepat
+
+🔒 PRIVASI TERJAGA
+Semua data belajar tersimpan di perangkat Anda sendiri. Tidak ada iklan, tidak ada pelacakan pihak ketiga, dan tidak perlu membuat akun.
+
+Mulai perjalanan belajar Bahasa Mandarin Anda sekarang — kapan saja, di mana saja, bahkan tanpa koneksi internet!</pre>
+
+  <h2>12 課主題對照</h2>
+  <ul class="theme-list">
+    <li>打招呼 — Salam &amp; Perkenalan</li>
+    <li>數字與時間 — Angka &amp; Waktu</li>
+    <li>家人 — Keluarga</li>
+    <li>飲食 — Makanan &amp; Minuman</li>
+    <li>購物與顏色 — Belanja &amp; Warna</li>
+    <li>交通與問路 — Transportasi &amp; Bertanya Arah</li>
+    <li>學校生活 — Kehidupan Sekolah</li>
+    <li>興趣與天氣 — Hobi &amp; Cuaca</li>
+    <li>機場與搭飛機 — Bandara &amp; Naik Pesawat</li>
+    <li>看病 — Ke Dokter</li>
+    <li>餐廳點餐 — Memesan di Restoran</li>
+    <li>職場 — Dunia Kerja</li>
+  </ul>
+
+  <hr class="divider">
+  <footer>BelajarMandarin · App Store 上架文案整理</footer>
+
+</div>
+</body>
+</html>
