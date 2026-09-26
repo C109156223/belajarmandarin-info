@@ -101,7 +101,7 @@
   <h1>BelajarMandarin</h1>
   <p class="meta">
     生效日期／Effective date：2026 年 9 月 20 日　·
-    最後更新／Last updated：2026 年 9 月 20 日
+    最後更新／Last updated：2026 年 9 月 26 日
   </p>
 
   <div class="card">
@@ -118,6 +118,7 @@
     <tr><th>資料</th><th>存在哪裡</th><th>會不會離開你的裝置</th></tr>
     <tr><td>學習進度、測驗成績、複習排程、自訂課程、深色模式等設定</td><td>你手機本地的儲存空間（AsyncStorage）</td><td>不會，除非你自己點「匯出備份」</td></tr>
     <tr><td>你在「意見回饋」欄位輸入的文字</td><td>只存在你手機上，直到你自己送出</td><td>只有在你按下「送出」、且在跳出的郵件 App 裡自己按下「寄出」之後，才會變成一封信寄到我們的信箱</td></tr>
+    <tr><td>單字表裡少數缺英文／印尼文解釋的詞條，App 會自動查詢一次並快取結果</td><td>查到之後存在你手機本地（AsyncStorage）</td><td>查詢當下會把「中文詞彙本身」送給第三方翻譯服務（見下方「第三方服務」），不含任何跟你個人有關的資料；查過一次之後就不會再查</td></tr>
   </table>
 
   <h2>二、意見回饋功能怎麼運作</h2>
@@ -138,9 +139,30 @@
   <h2>四、第三方服務</h2>
   <p>
     這個 App <strong>沒有串接</strong>任何分析工具（例如 Google Analytics）、廣告 SDK、或使用者追蹤技術，
-    也不會把任何資料傳給第三方伺服器。App 內用到的文字轉語音發音功能，是呼叫你手機作業系統內建的
-    語音合成功能，聲音在你的裝置上直接產生，不會送到我們或任何第三方的伺服器。
+    不會蒐集裝置廣告識別碼，也不會把任何跟你個人身分有關的資料傳給第三方伺服器。App 裡有兩個功能
+    會連網跟公開的第三方服務要「內容」（不是你的個人資料），說明如下：
   </p>
+  <div class="card">
+    <p>
+      <strong>發音（文字轉語音）</strong>：呼叫你手機作業系統內建的語音合成功能，聲音在你的裝置上直接
+      產生，不會送到我們或任何第三方的伺服器。
+    </p>
+  </div>
+  <div class="card">
+    <p>
+      <strong>筆順練習</strong>：會透過公開的內容平台（jsDelivr CDN）下載你正在看的那個漢字的筆順資料，
+      只會傳送「你要看哪個字」，不含任何跟你身分有關的資訊，離線時這個功能會顯示不出來。
+    </p>
+  </div>
+  <div class="card">
+    <p>
+      <strong>單字表翻譯補齊</strong>：單字表裡少數詞條原始資料還沒有英文／印尼文解釋，App 第一次載入
+      單字表時，會把「這個中文詞彙本身」（例如「蘋果」）送給公開的翻譯服務 MyMemory Translated
+      （<a href="https://mymemory.translated.net" target="_blank" rel="noopener">mymemory.translated.net</a>）
+      查詢翻譯，查到後存在你手機本地，之後就不會再重複查詢。傳送的內容只有詞彙本身，不包含姓名、
+      裝置代碼或任何跟你身分有關的資訊。
+    </p>
+  </div>
 
   <h2>五、兒童隱私</h2>
   <p>
@@ -183,8 +205,15 @@
       review it and tap send inside your Mail app. We only receive what you actually choose to send.</li>
     <li><strong>Backup/restore</strong>: exporting creates a local JSON file and opens the system share
       sheet — you choose where it goes. Nothing is auto-uploaded to any server.</li>
-    <li><strong>No third parties</strong>: no analytics, no ads, no tracking SDKs. Text-to-speech uses your
-      device's built-in speech synthesis and never sends audio or text to any server.</li>
+    <li><strong>No analytics, ads, or tracking SDKs</strong>, and no advertising identifiers are collected.
+      Text-to-speech uses your device's built-in speech synthesis and never sends audio or text to any server.</li>
+    <li><strong>Stroke-order practice</strong> downloads stroke-order data for the character you're viewing
+      from a public content delivery network (jsDelivr). Only the character itself is sent — nothing tied to
+      your identity — and the feature needs an internet connection.</li>
+    <li><strong>Word-list translation backfill</strong>: for the small number of word-list entries missing an
+      English/Indonesian definition, the app looks it up once via the public translation service MyMemory
+      Translated (mymemory.translated.net), sending only the Chinese word itself, then caches the result on
+      your device. No name, device ID, or other personal information is included in that request.</li>
     <li><strong>Children's privacy</strong>: since the app collects no personal information and has no
       account system, there is no personal data of any user, including children, for us to process.</li>
     <li><strong>Deleting your data</strong>: use Settings → Reset Progress, or simply delete the app.
