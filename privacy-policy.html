@@ -14,53 +14,67 @@
 <body><div class="wrap">
 <div class="eyebrow">Kebijakan Privasi · Privacy Policy · 隱私權政策</div>
 <h1>BelajarMandarin</h1>
-<p class="meta">Berlaku sejak / Effective / 生效日期：2026-09-20　·　Terakhir diperbarui / Last updated / 最後更新：2026-10-02</p>
+<p class="meta">Berlaku sejak / Effective / 生效日期：2026-09-20　·　Terakhir diperbarui / Last updated / 最後更新：2026-10-25</p>
 <nav class="langs"><a href="#id">Bahasa Indonesia</a><a href="#en">English</a><a href="#zh">中文</a></nav>
 
 <!-- ================= Bahasa Indonesia ================= -->
 <section id="id" lang="id">
 <div class="eyebrow">Bahasa Indonesia</div>
 <h2>Kebijakan Privasi</h2>
-<div class="card"><p>BelajarMandarin adalah aplikasi belajar bahasa Mandarin yang mengutamakan penggunaan offline. <strong>Kami hampir tidak mengumpulkan data apa pun</strong>: tidak ada akun, tidak ada analitik atau pelacakan pihak ketiga, dan tidak ada iklan. Kemajuan belajar dan rekaman suara Anda hanya tersimpan di ponsel Anda sendiri.</p></div>
+<div class="card"><p>BelajarMandarin adalah aplikasi belajar bahasa Mandarin yang tetap bisa dipakai offline. <strong>Akun bersifat opsional</strong>: Anda bisa memilih “Lanjut sebagai tamu”, dan dalam mode tamu semua kemajuan belajar hanya tersimpan di ponsel Anda. Jika Anda masuk dengan akun, kami menyimpan nama, email, ID pengguna, hasil kuis, dan cadangan kemajuan belajar Anda di Google Firebase. Kami tidak menampilkan iklan, tidak memakai analitik atau pelacakan pihak ketiga, dan <strong>tidak menjual atau membagikan data Anda</strong> kepada pihak lain. Rekaman suara tidak pernah keluar dari ponsel Anda.</p></div>
 
 <h2>1. Data apa yang diproses</h2>
 <table><tr><th>Data</th><th>Disimpan di mana</th><th>Apakah keluar dari perangkat</th></tr>
-<tr><td>Kemajuan belajar, nilai kuis, jadwal pengulangan, statistik latihan pengucapan, skor tertinggi game, pengaturan</td><td>Penyimpanan lokal ponsel (AsyncStorage)</td><td>Tidak, kecuali Anda sendiri mengekspor dan membagikan file cadangan</td></tr>
+<tr><td>Kemajuan belajar, nilai kuis, jadwal pengulangan, statistik latihan pengucapan, skor tertinggi game, pengaturan</td><td>Penyimpanan lokal ponsel (AsyncStorage)</td><td>Mode tamu: tidak, kecuali Anda sendiri mengekspor dan membagikan file cadangan. Jika masuk: lihat dua baris di bawah</td></tr>
 <tr><td>Rekaman suara saat latihan “Tirukan”</td><td>Folder sementara (cache) aplikasi di ponsel</td><td>Tidak pernah. Penilaian dilakukan di perangkat</td></tr>
-<tr><td>Teks yang Anda tulis di formulir masukan</td><td>Hanya di ponsel sampai Anda mengirimnya sendiri</td><td>Hanya jika Anda menekan Kirim di aplikasi email</td></tr></table>
+<tr><td>Teks yang Anda tulis di formulir masukan</td><td>Hanya di ponsel sampai Anda mengirimnya sendiri</td><td>Hanya jika Anda menekan Kirim di aplikasi email</td></tr>
+<tr><td><em>Hanya jika masuk:</em> nama tampilan, alamat email, ID pengguna, metode masuk, tanggal pembuatan akun dan waktu latihan terakhir</td><td>Google Firebase (Authentication dan Cloud Firestore)</td><td>Ya, untuk membuat dan mengelola akun Anda</td></tr>
+<tr><td><em>Hanya jika masuk:</em> hasil kuis dan latihan (jenis latihan, pelajaran, skor, kata yang salah, waktu)</td><td>Google Firebase (Cloud Firestore)</td><td>Ya. Jika sedang offline, hasil disimpan sementara di ponsel lalu diunggah saat online</td></tr>
+<tr><td><em>Hanya jika masuk:</em> cadangan kemajuan belajar di cloud (isi sama dengan file “Ekspor cadangan”, tanpa rekaman)</td><td>Google Firebase (Cloud Firestore)</td><td>Ya, agar kemajuan bisa dipulihkan di ponsel baru</td></tr>
+<tr><td><em>Hanya jika bergabung ke kelas:</em> kode kelas, guru kelas, tanggal mulai belajar</td><td>Google Firebase (Cloud Firestore)</td><td>Ya, agar guru kelas dapat melihat hasil belajar Anda</td></tr></table>
 
-<h2>2. Mikrofon dan penilaian pengucapan AI</h2>
+<h2>2. Akun dan cara masuk (opsional)</h2>
+<ul><li>Anda dapat masuk dengan <strong>Email dan kata sandi</strong>, <strong>Google</strong>, atau <strong>Apple</strong> (di iPhone/iPad). Kata sandi diproses oleh Firebase Authentication; kami tidak pernah melihat atau menyimpan kata sandi Anda.</li><li>Akun Email harus diverifikasi lewat tautan yang dikirim ke email Anda sebelum dapat digunakan. Email verifikasi dan pengaturan ulang kata sandi dikirim oleh Firebase.</li><li>Jika masuk dengan Google atau Apple, kami hanya menerima nama dan alamat email dari akun tersebut (Apple memungkinkan Anda menyembunyikan email asli).</li><li>Nama tampilan dapat Anda ubah kapan saja di aplikasi atau situs web.</li><li>Akun yang sama juga dipakai di situs latihan “華語練習室” (<a href="https://belajarmandarin.web.app">belajarmandarin.web.app</a>). Ujian simulasi dan latihan yang Anda kerjakan di sana disimpan ke akun yang sama.</li><li>Jika Anda memilih “Lanjut sebagai tamu”, tidak ada data yang dikirim ke Firebase.</li></ul>
+
+<h2>3. Siapa yang dapat melihat data Anda</h2>
+<ul><li><strong>Anda sendiri</strong> dapat melihat profil, hasil kuis, dan cadangan kemajuan Anda.</li><li><strong>Guru kelas</strong>: memasukkan kode kelas bersifat opsional. Jika Anda bergabung ke sebuah kelas, guru kelas tersebut dapat melihat profil Anda (nama tampilan, email, tanggal mulai belajar, waktu latihan terakhir) dan hasil kuis/latihan Anda. Guru dapat mengubah tanggal mulai belajar dan dapat menambahkan catatan nama asli Anda yang hanya terlihat oleh guru. Guru <strong>tidak</strong> dapat melihat cadangan kemajuan belajar Anda dan tidak dapat mengubah nama tampilan Anda.</li><li>Jika Anda keluar dari kelas (atau guru mengeluarkan Anda), guru tersebut tidak dapat lagi melihat data Anda.</li><li>Kami tidak menjual data Anda, tidak membagikannya kepada pihak ketiga untuk iklan atau pemasaran, dan tidak menggunakannya untuk membuat profil periklanan.</li></ul>
+
+<h2>4. Tempat penyimpanan dan keamanan</h2>
+<p>Data akun disimpan di Google Firebase (layanan milik Google LLC) yang kami gunakan sebagai penyedia layanan pemrosesan. Server Firebase dapat berada di luar Indonesia. Semua data dikirim melalui koneksi terenkripsi (HTTPS/TLS), dan aturan keamanan database membatasi akses hanya kepada pemilik akun dan guru kelasnya. Lihat <a href="https://firebase.google.com/support/privacy">informasi privasi Firebase</a>.</p>
+
+<h2>5. Mikrofon dan penilaian pengucapan AI</h2>
 <p>Fitur “Tirukan” meminta izin mikrofon agar Anda dapat merekam dan mendengarkan kembali pengucapan Anda. Mikrofon hanya aktif saat Anda menekan tombol rekam.</p>
-<ul><li>Penilaian pengucapan dilakukan oleh model AI yang <strong>berjalan sepenuhnya di ponsel Anda</strong>. Rekaman tidak dikirim ke kami atau ke server mana pun.</li><li>Rekaman disimpan di folder sementara aplikasi hanya untuk diputar ulang dan dinilai. Sistem dapat membersihkannya kapan saja, dan semuanya terhapus jika aplikasi dihapus.</li><li>Yang disimpan dalam kemajuan belajar hanyalah statistik (misalnya jumlah latihan dan skor terbaik), bukan rekamannya.</li><li>Anda dapat menolak atau mencabut izin mikrofon kapan saja di pengaturan sistem; fitur lain tetap dapat digunakan.</li></ul>
+<ul><li>Penilaian pengucapan dilakukan oleh model AI yang <strong>berjalan sepenuhnya di ponsel Anda</strong>. Rekaman tidak dikirim ke kami atau ke server mana pun, termasuk saat Anda masuk dengan akun.</li><li>Rekaman disimpan di folder sementara aplikasi hanya untuk diputar ulang dan dinilai. Sistem dapat membersihkannya kapan saja, dan semuanya terhapus jika aplikasi dihapus.</li><li>Yang disimpan dalam kemajuan belajar hanyalah statistik (misalnya jumlah latihan dan skor terbaik), bukan rekamannya.</li><li>Anda dapat menolak atau mencabut izin mikrofon kapan saja di pengaturan sistem; fitur lain tetap dapat digunakan.</li></ul>
 
-<h2>3. Suara pengucapan</h2>
+<h2>6. Suara pengucapan</h2>
 <p>Pengucapan standar diputar dari file audio yang sudah dibundel di dalam aplikasi. Jika suatu kata tidak memiliki file audio, aplikasi menggunakan mesin text-to-speech bawaan perangkat. Keduanya berjalan di perangkat.</p>
 
-<h2>4. Notifikasi pengingat belajar</h2>
+<h2>7. Notifikasi pengingat belajar</h2>
 <p>Pengingat belajar adalah notifikasi lokal yang dijadwalkan di ponsel Anda. Aplikasi tidak menggunakan layanan push notification dan tidak mengirim token perangkat ke server mana pun. Pengingat dapat dimatikan di pengaturan aplikasi atau sistem.</p>
 
-<h2>5. Masukan (feedback)</h2>
+<h2>8. Masukan (feedback)</h2>
 <p>Fitur “Masukan” tidak mengirim email di latar belakang dan tidak menggunakan layanan email pihak ketiga. Setelah Anda menekan kirim, aplikasi membuka aplikasi Mail bawaan perangkat dengan draf yang sudah terisi (pesan Anda, versi aplikasi, model perangkat dan versi sistem). Tidak ada yang dikirim sampai Anda sendiri memeriksa dan menekan Kirim.</p>
 
-<h2>6. Cadangan dan pemulihan</h2>
-<p>“Ekspor cadangan” menyimpan kemajuan belajar sebagai file JSON di ponsel dan membuka panel berbagi sistem, sehingga Anda sendiri yang memilih tempat menyimpan atau membagikannya. File cadangan tidak berisi rekaman suara. “Impor cadangan” hanya membaca file yang Anda pilih untuk memulihkan kemajuan belajar.</p>
+<h2>9. Cadangan dan pemulihan</h2>
+<ul><li>“Ekspor cadangan” menyimpan kemajuan belajar sebagai file JSON di ponsel dan membuka panel berbagi sistem, sehingga Anda sendiri yang memilih tempat menyimpan atau membagikannya. “Impor cadangan” hanya membaca file yang Anda pilih.</li><li>Jika Anda masuk, aplikasi juga menyimpan satu salinan cadangan kemajuan belajar di akun Anda secara otomatis, agar dapat dipulihkan saat Anda masuk di ponsel lain. Cadangan ini hanya dapat dibaca oleh Anda.</li><li>File cadangan dan cadangan cloud tidak berisi rekaman suara.</li></ul>
 
-<h2>7. Pembaruan aplikasi</h2>
-<p>Untuk menerima perbaikan dan konten baru tanpa mengunduh ulang dari toko aplikasi, aplikasi memeriksa pembaruan dari server Expo (EAS Update) saat dibuka. Permintaan ini berisi informasi teknis seperti platform, versi aplikasi, saluran pembaruan, dan ID acak yang dibuat untuk instalasi tersebut. Seperti semua koneksi internet, server dapat mencatat alamat IP. Permintaan ini tidak berisi kemajuan belajar, rekaman, atau informasi pribadi Anda. Lihat <a href="https://expo.dev/privacy">kebijakan privasi Expo</a>.</p>
+<h2>10. Pembaruan aplikasi</h2>
+<p>Untuk menerima perbaikan dan konten baru tanpa mengunduh ulang dari toko aplikasi, aplikasi memeriksa pembaruan dari server Expo (EAS Update) saat dibuka. Permintaan ini berisi informasi teknis seperti platform, versi aplikasi, saluran pembaruan, dan ID acak yang dibuat untuk instalasi tersebut. Seperti semua koneksi internet, server dapat mencatat alamat IP. Permintaan ini tidak berisi kemajuan belajar, rekaman, atau informasi akun Anda. Lihat <a href="https://expo.dev/privacy">kebijakan privasi Expo</a>.</p>
 
-<h2>8. Layanan pihak ketiga dan data urutan goresan</h2>
-<p>Aplikasi ini tidak menggunakan Google Analytics, SDK iklan, atau teknologi pelacakan, dan tidak mengumpulkan ID iklan perangkat. Data urutan goresan untuk 391 karakter dari 12 pelajaran bawaan sudah dibundel di dalam aplikasi dan dibaca secara lokal.</p>
+<h2>11. Layanan pihak ketiga dan data urutan goresan</h2>
+<ul><li>Layanan pihak ketiga yang digunakan: Google Firebase (akun dan penyimpanan data), Google Sign-In dan Sign in with Apple (hanya jika Anda memilih cara masuk tersebut), dan Expo EAS Update (pembaruan aplikasi). Seperti semua layanan internet, penyedia ini dapat mencatat informasi teknis seperti alamat IP.</li><li>Aplikasi ini tidak menggunakan Google Analytics, SDK iklan, atau teknologi pelacakan, dan tidak mengumpulkan ID iklan perangkat.</li><li>Data urutan goresan untuk 391 karakter dari 12 pelajaran bawaan sudah dibundel di dalam aplikasi dan dibaca secara lokal.</li></ul>
 
-<h2>9. Privasi anak</h2>
-<p>Karena aplikasi ini tidak mengumpulkan data pribadi dan tidak memiliki sistem akun, tidak ada data pribadi yang diproses melalui layanan akun. Orang tua yang memiliki pertanyaan dapat menghubungi kami melalui email di bawah.</p>
+<h2>12. Privasi anak</h2>
+<p>Aplikasi ini dapat digunakan oleh anak-anak. Dalam mode tamu, tidak ada data pribadi yang dikirim ke server, sehingga mode ini adalah pilihan yang paling sesuai untuk anak yang belajar sendiri.</p>
+<ul><li>Membuat akun memerlukan nama dan email. Anak di bawah usia yang ditetapkan oleh hukum setempat (di Indonesia: di bawah 18 tahun) sebaiknya membuat akun hanya dengan izin dan pendampingan orang tua atau wali. Orang tua dapat membuat akun menggunakan email orang tua.</li><li>Kami tidak menampilkan iklan, tidak melacak, dan tidak membagikan data kepada pihak ketiga, termasuk untuk anak-anak.</li><li>Orang tua atau wali dapat meminta kami melihat atau menghapus data anak melalui email di bawah, atau menghapus akun secara langsung (lihat bagian 13).</li></ul>
 
-<h2>10. Hak Anda / cara menghapus data</h2>
-<ul><li>Data belajar di ponsel dapat dihapus melalui Pengaturan → Atur Ulang Kemajuan, atau dengan menghapus aplikasi.</li><li>Rekaman suara terhapus saat sistem membersihkan cache atau saat aplikasi dihapus.</li><li>Jika Anda pernah mengirim email masukan kepada kami dan ingin isinya dihapus, balas email tersebut untuk memberi tahu kami.</li></ul>
+<h2>13. Hak Anda / cara menghapus data</h2>
+<ul><li><strong>Hapus akun</strong>: di aplikasi (Akun → Hapus akun permanen) atau di situs web <a href="https://belajarmandarin.web.app/#delete">belajarmandarin.web.app/#delete</a>. Menghapus akun akan menghapus secara permanen profil Anda, semua hasil kuis/latihan, cadangan kemajuan di cloud, dan akun masuk Anda. Data di ponsel tetap ada sampai Anda mengatur ulang kemajuan atau menghapus aplikasi.</li><li><strong>Atur Ulang Kemajuan</strong> (Pengaturan → Cadangkan &amp; Pulihkan → Atur Ulang Kemajuan) menghapus data belajar di ponsel dan, jika Anda masuk, juga cadangan kemajuan di cloud. Hasil kuis yang sudah tercatat tetap disimpan (agar guru kelas tetap dapat melihat riwayat belajar) sampai Anda menghapus akun.</li><li>Anda dapat mengubah nama tampilan, keluar dari kelas, atau keluar dari akun kapan saja.</li><li>Data akun disimpan selama akun Anda aktif dan dihapus saat Anda menghapus akun.</li><li>Rekaman suara terhapus saat sistem membersihkan cache atau saat aplikasi dihapus.</li><li>Untuk meminta salinan data, koreksi, atau penghapusan (termasuk email masukan yang pernah Anda kirim), hubungi kami melalui email di bawah.</li></ul>
 
-<h2>11. Perubahan kebijakan</h2>
+<h2>14. Perubahan kebijakan</h2>
 <p>Jika kebijakan ini berubah, kami akan memperbarui tanggal “Terakhir diperbarui” di bagian atas halaman ini dan menyebutkannya di catatan pembaruan aplikasi.</p>
 
-<h2>12. Hubungi kami</h2>
+<h2>15. Hubungi kami</h2>
 <p>Pertanyaan privasi: <a href="mailto:a27851436@gmail.com">a27851436@gmail.com</a></p>
 </section>
 
@@ -70,46 +84,60 @@
 <section id="en" lang="en">
 <div class="eyebrow">English</div>
 <h2>Privacy Policy</h2>
-<div class="card"><p>BelajarMandarin is an offline-first Mandarin learning app. <strong>We collect almost no data</strong>: there are no accounts, no third-party analytics or tracking, and no ads. Your learning progress and voice recordings stay on your own phone.</p></div>
+<div class="card"><p>BelajarMandarin is a Mandarin learning app that keeps working offline. <strong>An account is optional</strong>: you can choose “Continue as guest”, and in guest mode all your learning progress stays on your phone. If you sign in, we store your name, email, user ID, quiz results and a backup of your learning progress in Google Firebase. There are no ads, no third-party analytics or tracking, and we <strong>do not sell or share your data</strong> with anyone. Voice recordings never leave your phone.</p></div>
 
 <h2>1. What data is processed</h2>
 <table><tr><th>Data</th><th>Where it is stored</th><th>Does it leave your device?</th></tr>
-<tr><td>Learning progress, quiz scores, review schedules, pronunciation practice stats, game high scores, settings</td><td>Local storage on your phone (AsyncStorage)</td><td>No, unless you export and share a backup file yourself</td></tr>
+<tr><td>Learning progress, quiz scores, review schedules, pronunciation practice stats, game high scores, settings</td><td>Local storage on your phone (AsyncStorage)</td><td>Guest mode: no, unless you export and share a backup file yourself. Signed in: see the rows below</td></tr>
 <tr><td>Voice recordings from “Shadow” practice</td><td>The app’s temporary (cache) folder on your phone</td><td>Never. Scoring happens on the device</td></tr>
-<tr><td>Text you type into the feedback form</td><td>Only on your phone until you send it yourself</td><td>Only when you tap Send in your mail app</td></tr></table>
+<tr><td>Text you type into the feedback form</td><td>Only on your phone until you send it yourself</td><td>Only when you tap Send in your mail app</td></tr>
+<tr><td><em>Only when signed in:</em> display name, email address, user ID, sign-in method, account creation date and last practice time</td><td>Google Firebase (Authentication and Cloud Firestore)</td><td>Yes, to create and manage your account</td></tr>
+<tr><td><em>Only when signed in:</em> quiz and practice results (practice type, lesson, score, missed words, time)</td><td>Google Firebase (Cloud Firestore)</td><td>Yes. While offline, results are queued on your phone and uploaded once you are online</td></tr>
+<tr><td><em>Only when signed in:</em> cloud backup of your learning progress (same content as an “Export backup” file, no recordings)</td><td>Google Firebase (Cloud Firestore)</td><td>Yes, so your progress can be restored on a new phone</td></tr>
+<tr><td><em>Only if you join a class:</em> class code, class teacher, start date</td><td>Google Firebase (Cloud Firestore)</td><td>Yes, so your class teacher can see your results</td></tr></table>
 
-<h2>2. Microphone and AI pronunciation scoring</h2>
+<h2>2. Accounts and sign-in (optional)</h2>
+<ul><li>You can sign in with <strong>email and password</strong>, <strong>Google</strong>, or <strong>Apple</strong> (on iPhone/iPad). Passwords are handled by Firebase Authentication; we never see or store your password.</li><li>Email accounts must be verified through a link sent to your inbox before they can be used. Verification and password reset emails are sent by Firebase.</li><li>With Google or Apple sign-in, we only receive the name and email address of that account (Apple lets you hide your real email).</li><li>You can change your display name at any time in the app or on the website.</li><li>The same account also works on the “華語練習室” practice website (<a href="https://belajarmandarin.web.app">belajarmandarin.web.app</a>). Mock tests and practice you do there are saved to the same account.</li><li>If you choose “Continue as guest”, nothing is sent to Firebase.</li></ul>
+
+<h2>3. Who can see your data</h2>
+<ul><li><strong>You</strong> can see your own profile, quiz results and progress backup.</li><li><strong>Your class teacher</strong>: entering a class code is optional. If you join a class, that class’s teacher can see your profile (display name, email, start date, last practice time) and your quiz/practice results. The teacher can change your start date and can add a teacher-only note with your real name. The teacher <strong>cannot</strong> see your progress backup and cannot change your display name.</li><li>If you leave the class (or the teacher removes you), that teacher can no longer see your data.</li><li>We do not sell your data, do not share it with third parties for advertising or marketing, and do not use it to build advertising profiles.</li></ul>
+
+<h2>4. Where data is stored and how it is protected</h2>
+<p>Account data is stored in Google Firebase (a service of Google LLC), which we use as a data processor. Firebase servers may be located outside Indonesia. All data is sent over encrypted connections (HTTPS/TLS), and database security rules limit access to the account owner and their class teacher. See <a href="https://firebase.google.com/support/privacy">Firebase privacy information</a>.</p>
+
+<h2>5. Microphone and AI pronunciation scoring</h2>
 <p>“Shadow” asks for microphone permission so you can record and replay your own pronunciation. The microphone is only active while you are recording.</p>
-<ul><li>Pronunciation is scored by an AI model that <strong>runs entirely on your phone</strong>. Recordings are never sent to us or to any server.</li><li>Recordings are kept in the app’s temporary folder only for replay and scoring. The system may clear them at any time, and they are removed when the app is deleted.</li><li>Only statistics (such as number of attempts and best score) are saved in your learning progress, not the recordings.</li><li>You can deny or revoke microphone permission in system settings at any time; the rest of the app keeps working.</li></ul>
+<ul><li>Pronunciation is scored by an AI model that <strong>runs entirely on your phone</strong>. Recordings are never sent to us or to any server, even when you are signed in.</li><li>Recordings are kept in the app’s temporary folder only for replay and scoring. The system may clear them at any time, and they are removed when the app is deleted.</li><li>Only statistics (such as number of attempts and best score) are saved in your learning progress, not the recordings.</li><li>You can deny or revoke microphone permission in system settings at any time; the rest of the app keeps working.</li></ul>
 
-<h2>3. Pronunciation audio</h2>
+<h2>6. Pronunciation audio</h2>
 <p>Standard pronunciations are played from audio files bundled with the app. If a word has no audio file, the app uses your device’s built-in text-to-speech. Both run on the device.</p>
 
-<h2>4. Study reminder notifications</h2>
+<h2>7. Study reminder notifications</h2>
 <p>Study reminders are local notifications scheduled on your phone. The app does not use a push notification service and does not send a device token to any server. You can turn reminders off in the app or in system settings.</p>
 
-<h2>5. Feedback</h2>
+<h2>8. Feedback</h2>
 <p>The Feedback feature does not send email in the background or use a third-party email service. When you tap send, the app opens your device’s own Mail app with a pre-filled draft (your message, app version, device model and OS version). Nothing is sent until you review it and tap Send yourself.</p>
 
-<h2>6. Backup and restore</h2>
-<p>“Export backup” saves your learning progress as a JSON file on your phone and opens the system share sheet so you choose where to save or share it. Backups do not contain voice recordings. “Import backup” only reads the file you choose to restore your progress.</p>
+<h2>9. Backup and restore</h2>
+<ul><li>“Export backup” saves your learning progress as a JSON file on your phone and opens the system share sheet so you choose where to save or share it. “Import backup” only reads the file you choose.</li><li>When you are signed in, the app also automatically keeps one backup copy of your learning progress in your account, so it can be restored when you sign in on another phone. Only you can read this backup.</li><li>Neither backup files nor the cloud backup contain voice recordings.</li></ul>
 
-<h2>7. App updates</h2>
-<p>To deliver fixes and new content without a new store download, the app checks Expo’s servers (EAS Update) for updates when it opens. The request contains technical information such as platform, app version, update channel and a random ID created for that installation. As with any internet connection, the server may log your IP address. The request does not contain your learning progress, recordings or personal information. See <a href="https://expo.dev/privacy">Expo’s privacy policy</a>.</p>
+<h2>10. App updates</h2>
+<p>To deliver fixes and new content without a new store download, the app checks Expo’s servers (EAS Update) for updates when it opens. The request contains technical information such as platform, app version, update channel and a random ID created for that installation. As with any internet connection, the server may log your IP address. The request does not contain your learning progress, recordings or account information. See <a href="https://expo.dev/privacy">Expo’s privacy policy</a>.</p>
 
-<h2>8. Third-party services and stroke-order data</h2>
-<p>The app does not use Google Analytics, advertising SDKs or tracking technologies, and does not collect advertising IDs. Stroke-order data for the 391 characters in the 12 built-in lessons is bundled with the app and read locally.</p>
+<h2>11. Third-party services and stroke-order data</h2>
+<ul><li>Third-party services used: Google Firebase (accounts and data storage), Google Sign-In and Sign in with Apple (only if you choose that sign-in method), and Expo EAS Update (app updates). As with any internet service, these providers may log technical information such as IP addresses.</li><li>The app does not use Google Analytics, advertising SDKs or tracking technologies, and does not collect advertising IDs.</li><li>Stroke-order data for the 391 characters in the 12 built-in lessons is bundled with the app and read locally.</li></ul>
 
-<h2>9. Children’s privacy</h2>
-<p>Because the app collects no personal data and has no account system, no personal data is processed through any account service. Parents with questions are welcome to contact us at the email below.</p>
+<h2>12. Children’s privacy</h2>
+<p>The app may be used by children. In guest mode no personal data is sent to any server, which makes it the most suitable option for children learning on their own.</p>
+<ul><li>Creating an account requires a name and email address. Children under the age set by local law (in Indonesia, under 18) should create an account only with the permission and guidance of a parent or guardian. A parent may create the account with the parent’s own email address.</li><li>We do not show ads, track users or share data with third parties, including for children.</li><li>Parents or guardians can ask us to review or delete a child’s data by emailing us below, or delete the account directly (see section 13).</li></ul>
 
-<h2>10. Your rights / deleting your data</h2>
-<ul><li>Learning data on your phone can be cleared with Settings → Reset Progress, or by deleting the app.</li><li>Voice recordings are removed when the system clears the cache or when the app is deleted.</li><li>If you have emailed us feedback and want it deleted, reply to that email to let us know.</li></ul>
+<h2>13. Your rights / deleting your data</h2>
+<ul><li><strong>Delete your account</strong> in the app (Account → Delete account permanently) or on the website at <a href="https://belajarmandarin.web.app/#delete">belajarmandarin.web.app/#delete</a>. Deleting your account permanently deletes your profile, all quiz/practice results, your cloud progress backup and your sign-in account. Data on your phone stays until you reset progress or delete the app.</li><li><strong>Reset Progress</strong> (Settings → Backup &amp; Restore → Reset Progress) clears learning data on your phone and, if you are signed in, also deletes your cloud progress backup. Quiz results already recorded are kept (so your class teacher can still see your learning history) until you delete your account.</li><li>You can change your display name, leave a class or sign out at any time.</li><li>Account data is kept while your account exists and is deleted when you delete your account.</li><li>Voice recordings are removed when the system clears the cache or when the app is deleted.</li><li>To request a copy, correction or deletion of your data (including any feedback email you sent us), contact us at the email below.</li></ul>
 
-<h2>11. Policy updates</h2>
+<h2>14. Policy updates</h2>
 <p>If this policy changes, we will update the “Last updated” date at the top of this page and mention it in the app’s release notes.</p>
 
-<h2>12. Contact us</h2>
+<h2>15. Contact us</h2>
 <p>Privacy questions: <a href="mailto:a27851436@gmail.com">a27851436@gmail.com</a></p>
 </section>
 
@@ -119,46 +147,60 @@
 <section id="zh" lang="zh-Hant">
 <div class="eyebrow">中文</div>
 <h2>隱私權政策</h2>
-<div class="card"><p>這個 App 是一個離線優先的中文學習工具。<strong>我們幾乎不蒐集任何資料</strong>：沒有帳號系統、沒有第三方分析或追蹤工具，也沒有廣告。你的學習進度和錄音只存在你自己的手機裡。</p></div>
+<div class="card"><p>這個 App 是可以離線使用的中文學習工具。<strong>帳號是選用的</strong>：你可以選「以訪客繼續」，訪客模式下所有學習進度只存在你自己的手機裡。如果你登入帳號，我們會把你的姓名、Email、使用者 ID、測驗成績和學習進度備份存在 Google Firebase。我們沒有廣告、沒有第三方分析或追蹤工具，也<strong>不會販售或分享你的資料</strong>給任何人。錄音永遠不會離開你的手機。</p></div>
 
 <h2>一、我們處理哪些資料</h2>
 <table><tr><th>資料</th><th>存在哪裡</th><th>會不會離開你的裝置</th></tr>
-<tr><td>學習進度、測驗成績、複習排程、發音練習統計、小遊戲最高分、設定</td><td>手機本地儲存空間（AsyncStorage）</td><td>不會，除非你自己匯出並選擇分享備份檔</td></tr>
+<tr><td>學習進度、測驗成績、複習排程、發音練習統計、小遊戲最高分、設定</td><td>手機本地儲存空間（AsyncStorage）</td><td>訪客模式：不會，除非你自己匯出並分享備份檔。登入後：見下方幾列</td></tr>
 <tr><td>「跟讀」練習的錄音</td><td>手機上 App 的暫存資料夾</td><td>永遠不會，評分在手機上完成</td></tr>
-<tr><td>你在意見回饋欄位輸入的文字</td><td>只存在手機上，直到你自己送出</td><td>只有你在郵件 App 中按下寄送後才會寄出</td></tr></table>
+<tr><td>你在意見回饋欄位輸入的文字</td><td>只存在手機上，直到你自己送出</td><td>只有你在郵件 App 中按下寄送後才會寄出</td></tr>
+<tr><td><em>只有登入時：</em>顯示名稱、Email、使用者 ID、登入方式、帳號建立日期與最後練習時間</td><td>Google Firebase（Authentication 與 Cloud Firestore）</td><td>會，用來建立和管理你的帳號</td></tr>
+<tr><td><em>只有登入時：</em>測驗與練習紀錄（練習類型、課別、分數、答錯的詞、時間）</td><td>Google Firebase（Cloud Firestore）</td><td>會。離線時先暫存在手機，連上網路後再上傳</td></tr>
+<tr><td><em>只有登入時：</em>雲端學習進度備份（內容和「匯出備份」檔案相同，不含錄音）</td><td>Google Firebase（Cloud Firestore）</td><td>會，讓你換手機時可以還原進度</td></tr>
+<tr><td><em>只有加入班級時：</em>班級代碼、班級老師、開始上課日期</td><td>Google Firebase（Cloud Firestore）</td><td>會，讓班級老師看得到你的學習成果</td></tr></table>
 
-<h2>二、麥克風與 AI 發音評分</h2>
+<h2>二、帳號與登入（選用）</h2>
+<ul><li>你可以用 <strong>Email 和密碼</strong>、<strong>Google</strong> 或 <strong>Apple</strong>（iPhone／iPad）登入。密碼由 Firebase Authentication 處理，我們看不到也不會儲存你的密碼。</li><li>Email 帳號必須先點開寄到信箱的驗證連結才能使用；驗證信和重設密碼信由 Firebase 寄出。</li><li>用 Google 或 Apple 登入時，我們只會收到該帳號的姓名和 Email（Apple 可以讓你隱藏真實 Email）。</li><li>顯示名稱可以隨時在 App 或網站上修改。</li><li>同一個帳號也可以登入「華語練習室」練習網站（<a href="https://belajarmandarin.web.app">belajarmandarin.web.app</a>），你在網站上做的模擬考和練習會存到同一個帳號。</li><li>選擇「以訪客繼續」時，不會有任何資料傳到 Firebase。</li></ul>
+
+<h2>三、誰看得到你的資料</h2>
+<ul><li><strong>你自己</strong>看得到自己的個人資料、測驗紀錄和進度備份。</li><li><strong>班級老師</strong>：輸入班級代碼是選用的。如果你加入某個班級，該班老師可以看到你的個人資料（顯示名稱、Email、開始上課日期、最後練習時間）和測驗／練習紀錄。老師可以修改開始上課日期，也可以加註只有老師看得到的本名備註。老師<strong>看不到</strong>你的學習進度備份，也不能修改你的顯示名稱。</li><li>你退出班級（或老師將你移出班級）後，該老師就看不到你的資料。</li><li>我們不會販售你的資料，不會為了廣告或行銷分享給第三方，也不會用來建立廣告側寫。</li></ul>
+
+<h2>四、資料存放位置與安全</h2>
+<p>帳號資料存放在 Google Firebase（Google LLC 的服務），我們把它當作資料處理服務使用。Firebase 的伺服器可能位於印尼以外的地區。所有資料都透過加密連線（HTTPS／TLS）傳送，資料庫的安全規則只允許帳號本人和他的班級老師存取。詳見 <a href="https://firebase.google.com/support/privacy">Firebase 隱私權資訊</a>。</p>
+
+<h2>五、麥克風與 AI 發音評分</h2>
 <p>「跟讀」功能會請求麥克風權限，讓你錄下並重播自己的發音。只有在你按下錄音時才會使用麥克風。</p>
-<ul><li>發音評分由<strong>完全在你手機上執行</strong>的 AI 模型完成，錄音不會傳送給我們或任何伺服器。</li><li>錄音存在 App 的暫存資料夾，只用來重播和評分；系統可能隨時清除，刪除 App 時也會一併刪除。</li><li>學習進度裡只會記錄統計數字（例如練習次數、最高分），不會保存錄音本身。</li><li>你可以隨時在系統設定中拒絕或關閉麥克風權限，其他功能都能照常使用。</li></ul>
+<ul><li>發音評分由<strong>完全在你手機上執行</strong>的 AI 模型完成，錄音不會傳送給我們或任何伺服器，登入帳號後也一樣。</li><li>錄音存在 App 的暫存資料夾，只用來重播和評分；系統可能隨時清除，刪除 App 時也會一併刪除。</li><li>學習進度裡只會記錄統計數字（例如練習次數、最高分），不會保存錄音本身。</li><li>你可以隨時在系統設定中拒絕或關閉麥克風權限，其他功能都能照常使用。</li></ul>
 
-<h2>三、發音音檔</h2>
+<h2>六、發音音檔</h2>
 <p>標準發音由隨 App 打包的音檔播放；少數沒有音檔的詞，會改用手機作業系統內建的語音合成。兩者都在裝置上執行。</p>
 
-<h2>四、學習提醒通知</h2>
+<h2>七、學習提醒通知</h2>
 <p>學習提醒是排程在你手機上的本機通知。App 不使用推播服務，也不會把裝置代碼傳送到任何伺服器。你可以在 App 或系統設定中關閉提醒。</p>
 
-<h2>五、意見回饋</h2>
+<h2>八、意見回饋</h2>
 <p>「意見回饋」不會在背景偷偷寄信，也不會呼叫第三方寄信服務。按下送出後，App 會開啟手機本身的郵件 App，預先填入收件人、標題與內容（包含你的訊息、App 版本、裝置型號／系統版本）。真正寄出前，你可以自行檢查並按下寄送；我們只會收到你確實選擇寄出的內容。</p>
 
-<h2>六、備份與還原</h2>
-<p>「匯出備份」會把學習進度整理成 JSON 檔，存在手機裡並打開系統分享面板，由你自己選擇儲存或分享位置；備份檔不包含錄音。「匯入備份」只會讀取你選擇的檔案並還原學習進度。</p>
+<h2>九、備份與還原</h2>
+<ul><li>「匯出備份」會把學習進度整理成 JSON 檔，存在手機裡並打開系統分享面板，由你自己選擇儲存或分享位置；「匯入備份」只會讀取你選擇的檔案。</li><li>登入帳號後，App 也會自動在你的帳號裡保留一份學習進度備份，讓你在別支手機登入時可以還原。這份備份只有你自己讀得到。</li><li>備份檔和雲端備份都不包含錄音。</li></ul>
 
-<h2>七、App 更新</h2>
-<p>為了不必重新從商店下載就能收到修正和新內容，App 開啟時會向 Expo 的伺服器（EAS Update）檢查更新。這個請求包含技術資訊，例如平台、App 版本、更新頻道，以及為這次安裝隨機產生的識別碼；和所有網路連線一樣，伺服器可能記錄 IP 位址。請求中不包含你的學習進度、錄音或任何個人資料。詳見 <a href="https://expo.dev/privacy">Expo 隱私權政策</a>。</p>
+<h2>十、App 更新</h2>
+<p>為了不必重新從商店下載就能收到修正和新內容，App 開啟時會向 Expo 的伺服器（EAS Update）檢查更新。這個請求包含技術資訊，例如平台、App 版本、更新頻道，以及為這次安裝隨機產生的識別碼；和所有網路連線一樣，伺服器可能記錄 IP 位址。請求中不包含你的學習進度、錄音或帳號資料。詳見 <a href="https://expo.dev/privacy">Expo 隱私權政策</a>。</p>
 
-<h2>八、第三方服務與筆順資料</h2>
-<p>這個 App 沒有串接 Google Analytics、廣告 SDK 或使用者追蹤技術，也不會蒐集裝置廣告識別碼。12 堂內建課程使用的 391 個漢字筆畫資料已隨 App 打包，筆順練習直接讀取本機資料。</p>
+<h2>十一、第三方服務與筆順資料</h2>
+<ul><li>使用的第三方服務：Google Firebase（帳號與資料儲存）、Google 登入與 Apple 登入（只有你選擇該登入方式時）、Expo EAS Update（App 更新）。和所有網路服務一樣，這些服務商可能記錄 IP 位址等技術資訊。</li><li>這個 App 沒有串接 Google Analytics、廣告 SDK 或使用者追蹤技術，也不會蒐集裝置廣告識別碼。</li><li>12 堂內建課程使用的 391 個漢字筆畫資料已隨 App 打包，筆順練習直接讀取本機資料。</li></ul>
 
-<h2>九、兒童隱私</h2>
-<p>因為這個 App 不蒐集個人資料，也沒有帳號系統，所以沒有任何個人資料需要透過帳號服務處理。如果你是家長，對 App 有疑問，歡迎透過下方信箱聯絡我們。</p>
+<h2>十二、兒童隱私</h2>
+<p>這個 App 可能會有兒童使用。訪客模式不會把任何個人資料傳到伺服器，是兒童自行學習時最合適的使用方式。</p>
+<ul><li>建立帳號需要姓名和 Email。未達當地法律規定年齡的兒童（在印尼為未滿 18 歲），應在父母或監護人同意並陪同下才建立帳號；家長也可以用自己的 Email 幫孩子建立帳號。</li><li>我們不顯示廣告、不追蹤使用者，也不會把資料分享給第三方，兒童也一樣。</li><li>父母或監護人可以寫信到下方信箱，要求查看或刪除孩子的資料，也可以直接刪除帳號（見第十三點）。</li></ul>
 
-<h2>十、你的權利／如何刪除資料</h2>
-<ul><li>手機本地的學習資料可以在「設定 → 重設學習進度」清除，或直接刪除 App。</li><li>錄音會在系統清除暫存或刪除 App 時一併刪除。</li><li>如果你曾透過意見回饋寄信給我們，想刪除那封信的內容，可以回信告知我們。</li></ul>
+<h2>十三、你的權利／如何刪除資料</h2>
+<ul><li><strong>刪除帳號</strong>：在 App（帳號 → 永久刪除帳號）或網站 <a href="https://belajarmandarin.web.app/#delete">belajarmandarin.web.app/#delete</a> 都可以刪除。刪除帳號會永久刪除你的個人資料、所有測驗／練習紀錄、雲端進度備份和登入帳號本身。手機上的資料會保留，直到你重設學習進度或刪除 App。</li><li><strong>重設學習進度</strong>（設定 → 備份與還原 → 重設學習進度）會清除手機上的學習資料；如果你已登入，也會刪除雲端進度備份。已經上傳的測驗紀錄會保留（讓班級老師仍看得到學習歷程），直到你刪除帳號為止。</li><li>你可以隨時修改顯示名稱、退出班級或登出。</li><li>帳號資料會保存到你刪除帳號為止。</li><li>錄音會在系統清除暫存或刪除 App 時一併刪除。</li><li>如果想索取資料副本、更正或刪除資料（包括你曾寄給我們的意見回饋信），請寫信到下方信箱。</li></ul>
 
-<h2>十一、政策更新</h2>
+<h2>十四、政策更新</h2>
 <p>如果政策內容有變動，我們會更新本頁上方的「最後更新」日期，並在 App 更新說明中註明。</p>
 
-<h2>十二、聯絡我們</h2>
+<h2>十五、聯絡我們</h2>
 <p>隱私權問題：<a href="mailto:a27851436@gmail.com">a27851436@gmail.com</a></p>
 </section>
 
